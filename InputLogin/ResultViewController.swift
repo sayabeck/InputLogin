@@ -22,8 +22,8 @@ class ResultViewController: UIViewController {
         welcomeLabel.text = welcomeText
         emojiLabel.text = emojiText
         
-        let firstColor = UIColor(red: 170 / 255, green: 45 / 255, blue: 253 / 255, alpha: 1).cgColor
-        let secondColor = UIColor(red: 34 / 255, green: 126 / 255, blue: 195 / 255, alpha: 1).cgColor
+        let firstColor = UIColor(red: 253 / 255, green: 142 / 255, blue: 45 / 255, alpha: 1).cgColor
+        let secondColor = UIColor(red: 34 / 255, green: 181 / 255, blue: 195 / 255, alpha: 1).cgColor
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
@@ -35,3 +35,4 @@ class ResultViewController: UIViewController {
     }
     
 }
+
