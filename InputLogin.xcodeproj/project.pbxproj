@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		9A14CFA627DCC91C00A6329C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14CFA527DCC91C00A6329C /* AppDelegate.swift */; };
 		9A14CFA827DCC91C00A6329C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14CFA727DCC91C00A6329C /* SceneDelegate.swift */; };
-		9A14CFAA27DCC91C00A6329C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14CFA927DCC91C00A6329C /* ViewController.swift */; };
+		9A14CFAA27DCC91C00A6329C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14CFA927DCC91C00A6329C /* MainViewController.swift */; };
 		9A14CFAD27DCC91C00A6329C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A14CFAB27DCC91C00A6329C /* Main.storyboard */; };
 		9A14CFAF27DCC91D00A6329C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A14CFAE27DCC91D00A6329C /* Assets.xcassets */; };
 		9A14CFB227DCC91D00A6329C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A14CFB027DCC91D00A6329C /* LaunchScreen.storyboard */; };
+		9A14CFBD27DCE80100A6329C /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14CFBC27DCE80100A6329C /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9A14CFA227DCC91C00A6329C /* InputLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InputLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A14CFA527DCC91C00A6329C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A14CFA727DCC91C00A6329C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9A14CFA927DCC91C00A6329C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A14CFA927DCC91C00A6329C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9A14CFAC27DCC91C00A6329C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A14CFAE27DCC91D00A6329C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A14CFB127DCC91D00A6329C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A14CFB327DCC91D00A6329C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A14CFBC27DCE80100A6329C /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				9A14CFA527DCC91C00A6329C /* AppDelegate.swift */,
 				9A14CFA727DCC91C00A6329C /* SceneDelegate.swift */,
-				9A14CFA927DCC91C00A6329C /* ViewController.swift */,
+				9A14CFA927DCC91C00A6329C /* MainViewController.swift */,
+				9A14CFBC27DCE80100A6329C /* ResultViewController.swift */,
 				9A14CFAB27DCC91C00A6329C /* Main.storyboard */,
 				9A14CFAE27DCC91D00A6329C /* Assets.xcassets */,
 				9A14CFB027DCC91D00A6329C /* LaunchScreen.storyboard */,
@@ -137,9 +140,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A14CFAA27DCC91C00A6329C /* ViewController.swift in Sources */,
+				9A14CFAA27DCC91C00A6329C /* MainViewController.swift in Sources */,
 				9A14CFA627DCC91C00A6329C /* AppDelegate.swift in Sources */,
 				9A14CFA827DCC91C00A6329C /* SceneDelegate.swift in Sources */,
+				9A14CFBD27DCE80100A6329C /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4MMKWZWX48;
 				INFOPLIST_FILE = InputLogin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4MMKWZWX48;
 				INFOPLIST_FILE = InputLogin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
