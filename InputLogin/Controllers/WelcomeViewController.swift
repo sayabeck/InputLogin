@@ -7,20 +7,19 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
+class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabel: UILabel!
-    @IBOutlet weak var emojiLabel: UILabel!
     
-    var welcomeText: String!
-    var emojiText: String!
-    
+    var nameText = ""
+    var surnameText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        welcomeLabel.text = welcomeText
-        emojiLabel.text = emojiText
+        tabBarItem.title = "\(nameText) \(surnameText)"
+        
+        welcomeLabel.text = "Welcome, \(nameText)!"
         
         let firstColor = UIColor(red: 253 / 255, green: 142 / 255, blue: 45 / 255, alpha: 1).cgColor
         let secondColor = UIColor(red: 34 / 255, green: 181 / 255, blue: 195 / 255, alpha: 1).cgColor

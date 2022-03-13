@@ -14,8 +14,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var forgotUsernameButton: UIButton!
-    @IBOutlet weak var forgotPasswordButton: UIButton!
+    
+    let userData = UserData.getUserData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,38 +26,46 @@ class MainViewController: UIViewController {
         passwordTextField.delegate = self
         passwordTextField.returnKeyType = .done
         passwordTextField.enablesReturnKeyAutomatically = true
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToResult" {
-            guard let resultVC = segue.destination as? ResultViewController else { return }
-            resultVC.welcomeText = "Welcome, \(usernameTextField.text ?? "Anonymous")!"
-            resultVC.emojiText = "👋"
+        let tabBarController = segue.destination as! UITabBarController
+        
+        for viewController in tabBarController.viewControllers ?? [] {
+            
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.nameText = userData.data.name
+                welcomeVC.surnameText = userData.data.surname
+                
+            } else if let navigationVC = viewController as? UINavigationController {
+                let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
+                aboutUserVC.name = userData.data.name
+                aboutUserVC.surname = userData.data.surname
+                aboutUserVC.city = userData.data.city
+                aboutUserVC.hobby = userData.data.hobby
+            }
         }
+        
     }
     
 
     @IBAction func forgotPressed(_ sender: UIButton) {
         
-        if sender == forgotUsernameButton {
+        if sender.tag == 0 {
             showAlert(
                 title: "Oops!",
-                message: "Your username is User 😉",
-                button: sender
+                message: "Your username is \(userData.user) 😉"
             )} else {
             showAlert(
                 title: "Oops!",
-                message: "Your password is Password 😉",
-                button: sender
+                message: "Your password is \(userData.password) 😉"
             )}
         
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {
-        if usernameTextField.text == "User" && passwordTextField.text == "Password" {
-            performSegue(withIdentifier: "goToResult", sender: self)
+        if usernameTextField.text == userData.user && passwordTextField.text == userData.password {
+            performSegue(withIdentifier: "goToResult", sender: nil)
         } else {
             showAlert(
                 title: "Invalid login or password ",
@@ -67,18 +75,16 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-            guard let _ = segue.source as? ResultViewController else { return }
-            usernameTextField.text = ""
-            passwordTextField.text = ""
+        usernameTextField.text = ""
+        passwordTextField.text = ""
     }
 
 //MARK: - Private methods
-    private func showAlert(title: String, message: String, button: UIButton) {
+    private func showAlert(title: String, message: String, button: UIButton? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         if button == loginButton {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            self.usernameTextField.text = self.usernameTextField.text
             self.passwordTextField.text = ""
             }))
         } else {
@@ -93,14 +99,19 @@ class MainViewController: UIViewController {
 //MARK: - UITextFieldDelegate
 extension MainViewController: UITextFieldDelegate {
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == passwordTextField {
             loginPressed(loginButton)
-            return true
         } else {
             self.passwordTextField.becomeFirstResponder()
-            return true
         }
+        
+        return true
     }
     
 }
