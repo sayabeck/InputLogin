@@ -16,6 +16,7 @@ struct UserData {
         UserData(data: Person(
                     name: "Sayabek",
                     surname: "Nurmagambetov",
+                    age: 29,
                     city: "Nur-Sultan",
                     hobby: "Football")
         )}
@@ -24,6 +25,7 @@ struct UserData {
 struct Person {
     let name: String
     let surname: String
+    let age: Int
     let city: String
     let hobby: String
 }

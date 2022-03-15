@@ -41,6 +41,7 @@ class MainViewController: UIViewController {
                 let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
                 aboutUserVC.name = userData.data.name
                 aboutUserVC.surname = userData.data.surname
+                aboutUserVC.age = userData.data.age
                 aboutUserVC.city = userData.data.city
                 aboutUserVC.hobby = userData.data.hobby
             }
