@@ -17,8 +17,6 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBarItem.title = "\(nameText) \(surnameText)"
-        
         welcomeLabel.text = "Welcome, \(nameText)!"
         
         let firstColor = UIColor(red: 253 / 255, green: 142 / 255, blue: 45 / 255, alpha: 1).cgColor

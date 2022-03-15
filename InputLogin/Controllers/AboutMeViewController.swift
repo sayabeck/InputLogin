@@ -14,6 +14,7 @@ class AboutMeViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var hobbyLabel: UILabel!
     
+    
     var name = ""
     var surname = ""
     var city = ""
@@ -22,10 +23,13 @@ class AboutMeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = "name: \(name)"
-        surnameLabel.text = "surname: \(surname)"
-        cityLabel.text = "city: \(city)"
-        hobbyLabel.text = "my hobby: \(hobby)"
+        navigationItem.title = "\(name) \(surname)"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "\(name) \(surname)", style: .plain, target: nil, action: nil)
+        
+        nameLabel.text = name
+        surnameLabel.text = surname
+        cityLabel.text = city
+        hobbyLabel.text = hobby
     }
 
 }
