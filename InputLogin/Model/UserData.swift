@@ -18,8 +18,9 @@ struct UserData {
                     surname: "Nurmagambetov",
                     age: 29,
                     city: "Nur-Sultan",
-                    hobby: "Football")
-        )}
+                    hobby: "Football",
+                    image: "myPhoto"
+        ))}
 }
 
 struct Person {
@@ -28,4 +29,11 @@ struct Person {
     let age: Int
     let city: String
     let hobby: String
+    let image: String
+    
+    var fullName: String {
+        "\(name) \(surname)"
+    }
+    
+    
 }

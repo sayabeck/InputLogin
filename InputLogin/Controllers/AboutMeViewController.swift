@@ -16,24 +16,28 @@ class AboutMeViewController: UIViewController {
     @IBOutlet weak var hobbyLabel: UILabel!
     
     
-    var name = ""
-    var surname = ""
-    var age = 0
-    var city = ""
-    var hobby = ""
+    var user: UserData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "\(name) \(surname)", style: .plain, target: nil, action: nil)
+        title = user.data.fullName
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: user.data.fullName, style: .plain, target: nil, action: nil)
         
         view.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
        
-        nameLabel.text = name
-        surnameLabel.text = surname
-        ageLabel.text = String(age)
-        cityLabel.text = city
-        hobbyLabel.text = hobby
+        nameLabel.text = user.data.name
+        surnameLabel.text = user.data.surname
+        ageLabel.text = String(user.data.age)
+        cityLabel.text = user.data.city
+        hobbyLabel.text = user.data.hobby
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let photoVC = segue.destination as? PhotoViewController else { return }
+        photoVC.image = user.data.image
+        
     }
 
 }

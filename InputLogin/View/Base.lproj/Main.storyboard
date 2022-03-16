@@ -112,7 +112,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rHN-rg-UmV">
                                 <rect key="frame" x="20" y="100" width="280" height="104"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, User!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rj-LM-QEc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, User!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rj-LM-QEc">
                                         <rect key="frame" x="29.5" y="0.0" width="221.5" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -127,7 +127,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="y6j-N5-Zfq" firstAttribute="centerX" secondItem="rHN-rg-UmV" secondAttribute="centerX" id="FHO-7f-Dyd"/>
-                                    <constraint firstAttribute="height" constant="104" id="r3f-Te-S8c"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -272,8 +271,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="42-1" translatesAutoresizingMaskIntoConstraints="NO" id="T19-cT-Ime">
-                                <rect key="frame" x="0.0" y="20" width="340" height="528"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="T19-cT-Ime">
+                                <rect key="frame" x="0.0" y="20.5" width="340" height="527.5"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9R6-qx-4UV"/>
@@ -288,6 +287,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q64-ey-KSB"/>
+                    <connections>
+                        <outlet property="photoView" destination="T19-cT-Ime" id="dGI-Yy-tlw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sL7-2R-wO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -333,8 +335,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="42-1" width="709" height="945"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

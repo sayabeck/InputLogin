@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
-    let userData = UserData.getUserData()
+    private let userData = UserData.getUserData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +35,10 @@ class MainViewController: UIViewController {
             
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.nameText = userData.data.name
-                welcomeVC.surnameText = userData.data.surname
                 
             } else if let navigationVC = viewController as? UINavigationController {
                 let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
-                aboutUserVC.name = userData.data.name
-                aboutUserVC.surname = userData.data.surname
-                aboutUserVC.age = userData.data.age
-                aboutUserVC.city = userData.data.city
-                aboutUserVC.hobby = userData.data.hobby
+                aboutUserVC.user = userData
             }
         }
         

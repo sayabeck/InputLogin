@@ -9,8 +9,14 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
+    @IBOutlet weak var photoView: UIImageView!
+    
+    var image = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        photoView.image = UIImage(named: image)
        
     }
 
